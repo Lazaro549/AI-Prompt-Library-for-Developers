@@ -1,0 +1,48 @@
+name: Prompt Validation
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-prompts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Validate prompt structure
+        run: |
+          echo "🔍 Validating prompt files..."
+
+          FAIL=0
+
+          for file in $(find . -type f -name "*.md" \
+            ! -path "./README.md" \
+            ! -path "./CONTRIBUTING.md" \
+            ! -path "./LICENSE" \
+            ! -path "./examples/*"); do
+
+            echo "Checking $file"
+
+            if ! grep -q "## Context" "$file"; then
+              echo "❌ Missing '## Context' in $file"
+              FAIL=1
+            fi
+
+            if ! grep -q "## Prompt" "$file"; then
+              echo "❌ Missing '## Prompt' in $file"
+              FAIL=1
+            fi
+
+          done
+
+          if [ $FAIL -eq 1 ]; then
+            echo "🚨 Validation failed."
+            exit 1
+          else
+            echo "✅ All prompt files validated successfully."
+          fi
