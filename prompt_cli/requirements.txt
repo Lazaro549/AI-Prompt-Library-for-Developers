@@ -1,0 +1,8 @@
+# Para CLI básica y manejo de prompts
+rich>=13.3.3          # Para imprimir prompts con estilo en la terminal
+python-dotenv>=1.0.0  # Para manejar variables de entorno (API keys)
+pydantic>=2.6.0       # Para validación opcional de placeholders
+
+# Para integración con OpenAI
+openai>=1.29.0         # Para ejecutar prompts directamente en la API
+requests>=2.31.0       # Dependencias HTTP
