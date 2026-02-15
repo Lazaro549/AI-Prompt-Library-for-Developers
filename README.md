@@ -1,4 +1,5 @@
 # 🚀 AI Prompt Library for Developers
+![CLI Demo](prompt_cli/cli_demo.png)
 
 > A production-ready AI Prompt Toolkit for developers — coding, DevOps, documentation, research & automation.
 
