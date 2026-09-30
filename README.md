@@ -48,3 +48,13 @@ All prompts are structured for **clarity, repeatability, and scalability**.
 - Confirm execution
 
 - Output saved automatically in `results/`
+
+## 💸 Donations
+
+If you'd like to support this project:
+
+- 🇦🇷 ARS (Argentina)  
+  Alias: `lazaro.503.alaba.mp`
+
+- 🌎 USD (Argentina only, local transfers)  
+  Alias: `ahogada.duras.foca`
